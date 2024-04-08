@@ -23,5 +23,5 @@ version="0.0.1",
 author="Dayanand Pattar",
 author_email="daya6252@gmail.com",
 find_packages=find_packages(),
-install_requires=['pandas','numpy','seaborn']
+install_requires=get_requirements('requirements.txt')
 )
