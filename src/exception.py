@@ -1,7 +1,6 @@
 import sys
-import logger
 import logging
-
+from logger import logging
 def error_message_details(error,error_detail:sys):
     exception_type,exception,exc_tb=error_detail.exc_info()
     file_name=exc_tb.tb_frame.f_code.co_filename
@@ -9,7 +8,7 @@ def error_message_details(error,error_detail:sys):
     '''returns the tuple (type(e), e, e.__traceback__). That is, a tuple containing the type of the exception (a subclass of BaseException), 
     the exception itself, and a traceback object which typically encapsulates the call stack at the point where the exception last occurred.'''
     
-    error_message="Erro occured in python script [{0}] line numer [{1}] error message [{2}]".format( file_name,line_number,str(error) )
+    error_message="Error occured in python script [{0}] line numer [{1}] error message [{2}]".format( file_name,line_number,str(error) )
     
     return error_message
 
@@ -24,12 +23,11 @@ class CustomException(Exception):
     
 
 #code block to test if exception handling is working
-"""    
+""" 
 if __name__=="__main__":
     try:
         a=1/0
     except Exception as e:
         logging.info("custom exception raised")
         raise CustomException(e,sys)
-        
-"""
+"""       
